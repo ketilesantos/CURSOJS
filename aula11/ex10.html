@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denatran</title>
+    <style>
+        body{
+            background-color: blueviolet;
+            font: normal 20pt Arial;
+            color: white;
+            text-align: center;
+        }
+        input{
+            font-size: 15px;
+            width: 250px;
+            height: 50px;
+            border-radius: 8px;
+            border: none;
+            text-align: center;
+        }
+        #res{
+            margin-top: 20px;
+        }
+        h1{
+            opacity: 0.8;
+        }
+        #enviar{
+            background-color:turquoise;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sistemas de Multas</h1>
+    <input type="number" name='vel' id='vel' 
+    placeholder="Digite a velocidade do carro">
+    <input id="enviar" type="button" value = "Submit" onclick="calcular()">
+    <div id='res'>
+
+    </div>
+    <script>
+        function calcular(){
+            var txtv=document.getElementById('vel')
+            var res = document.getElementById('res')
+            var vel = Number(txtv.value)
+            res.innerHTML = `Sua velocidade atual é de ${vel}Km/h`
+            if (vel > 60){
+                res.innerHTML += `<p>Você está Multado! </p>`
+            }
+            res.innerHTML += `<p>Dirija sempre com cinto de segunça</p>`
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>País</title>
+    <style>
+        body{
+            background-color:rgb(139, 79, 139);
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            
+        }
+        input{
+            align-items: center;
+            justify-content: center;
+            width: 260px;
+            height: 40px;
+            border-radius: 8px;
+            border: none;
+            text-align: center;
+            font-weight: bold;
+            
+        }
+        #btn{
+            background-color: rgb(31, 216, 87);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Você é Estrangeiro/Brasileiro?</h1>
+
+        <input type="text" name='nome' id='txtnome' placeholder="Digite seu nome">
+        <input type="text" name='pais' id='txtpais' placeholder="Digite o nome do País onde você mora">
+        <input id="btn" type="button" value="Submit" onclick="VerificaPais()">
+        <div id="res"></div>
+
+    <script>
+        function VerificaPais(){
+            var name  = document.getElementById('txtnome')
+            var state = document.getElementById('txtpais')
+            var res = document.getElementById('res')
+            var n = (name.value)
+            var p = (state.value)
+            res.innerHTML = `<p>Olá ${n}, o país onde você mora é o/a ${p}</p>`
+            if (p === 'Brasil'){
+                res.innerHTML+=`<p>Sendo assim, você é Brasileiro!</p>`
+            }else{
+               res.innerHTML+=`<p>E você é estrangeiro!</p>`
+            }
+        }
+    </script>
+</body>
+</html>
